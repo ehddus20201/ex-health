@@ -3,6 +3,7 @@ import { exercises } from "../js/data.js";
 const searchInput = document.querySelector(".search_input_wrapper");
 const cardContainer = document.querySelector(".card_container");
 const autocompleteList = document.querySelector(".autocomplete_list");
+const searchResultTitle = document.querySelector(".search_result_title");
 
 // (카드 생성 함수)
 function createExerciseCard(item) {
@@ -29,6 +30,7 @@ function showSearchResult(keyword) {
     });
   } else {
     cardContainer.innerHTML = `<p>해당 이름을 가진 운동을 찾을 수 없어요 😓</p>`;
+    // searchResultTitle.style.display = "none";
   }
 }
 
@@ -46,7 +48,7 @@ function handleSearchInput() {
   if (!inputValue) {
     return;
   }
-
+  searchResultTitle.style.display = "block";
   const matchedExercises = getMatchedExercises(inputValue);
 
   // 입력 추천 자동 검색어..?

@@ -22,7 +22,7 @@
 .input_wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .input_wrapper i {
@@ -62,7 +62,7 @@
   box-shadow: 5px 5px 10px var(--c-dark);
   border-radius: 8px;
   list-style: none;
-  max-height: 200px;
+  max-height: 160px;
   overflow-y: auto;
   z-index: 999;
 }
@@ -85,13 +85,15 @@
   position: relative;
   background-color: var(--c-alice);
   min-height: 100vh;
-  padding-top: 150px;
+  padding-top: 250px;
   /* height: auto;  */
   display: flex;
   flex-direction: column;
 }
 
 .search_result_title {
+  display: none;
+  position: relative;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
