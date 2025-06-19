@@ -1,9 +1,8 @@
-
 /* 탭 컨텐츠 영역 */
 .result_wrap {
- width: 100%;
- padding: 28px 0 60px; 
- background-color: #EFF3FD;
+  width: 100%;
+  padding: 28px 0 60px;
+  background-color: #eff3fd;
 }
 
 .sub_tit {
@@ -17,7 +16,7 @@
   line-height: 1.5;
   letter-spacing: -0.96px;
 
- @media (max-width: 600px) {
+  @media (max-width: 600px) {
     margin-bottom: 40px;
     font-size: 32px;
   }
@@ -25,16 +24,15 @@
 
 .tab_wrap {
   max-width: 1200px;
-  margin:0 auto;
+  margin: 0 auto;
 }
-
 
 .tab_wrap .tab_menu {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
 
- @media (max-width: 600px) {
+  @media (max-width: 600px) {
     flex-wrap: wrap;
   }
 }
@@ -42,12 +40,12 @@
 .tab_wrap .tab_menu > li {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   width: calc(100% / 5);
   height: 50px;
   cursor: pointer;
   box-sizing: border-box;
-  border-bottom: 1px solid #90A3BF;
+  border-bottom: 1px solid #90a3bf;
   transition: 0.3s ease-in-out;
 
   @media (max-width: 600px) {
@@ -63,7 +61,6 @@
       font-weight: 700;
     }
   }
-
 }
 
 .tab_wrap .tab_menu > li > button {
@@ -72,9 +69,9 @@
   font-size: 22px;
   color: rgba(44, 62, 80, 0.6);
   background-color: transparent;
-  text-align:center;
+  text-align: center;
   transition: 0.3s ease-in-out;
-  
+
   @media (max-width: 600px) {
     font-size: 16px;
   }
@@ -90,13 +87,12 @@
 }
 
 .tab_cont_wrap .tab_cont {
-  display:none;
+  display: none;
   &.active {
     display: block;
   }
-  
 }
 .card_wrap .no_data {
   width: 100%;
-  text-align:center;
+  text-align: center;
 }
