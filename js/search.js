@@ -40,8 +40,10 @@ function handleSearchInput() {
   const inputValue = searchInput.value.trim();
   cardWrap.innerHTML = "";
   autocompleteList.innerHTML = "";
-
+  const searchTitle = document.querySelector(".sub_tit");
   if (!inputValue) {
+    cardWrap.style.display = "none";
+    searchTitle.style.display = "none";
     return;
   }
 
@@ -64,7 +66,8 @@ function handleSearchInput() {
   } else {
     autocompleteList.style.display = "none"; // 검색어는 있는데 추천이 없으면 숨김
   }
-
+  cardWrap.style.display = "block";
+  searchTitle.style.display = "block";
   showSearchResult(inputValue);
 }
 
