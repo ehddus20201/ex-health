@@ -4,6 +4,7 @@ const searchInput = document.querySelector(".search_input_wrapper");
 const cardContainer = document.querySelector(".card_container");
 const autocompleteList = document.querySelector(".autocomplete_list");
 const searchResultTitle = document.querySelector(".search_result_title");
+// const categoryCardWrapper = document.querySelector(".탭 컨텐츠");
 
 // (카드 생성 함수)
 function createExerciseCard({ thumbnail, name }) {
@@ -28,7 +29,6 @@ function showSearchResult(keyword) {
     });
   } else {
     cardContainer.innerHTML = `<p>해당 이름을 가진 운동을 찾을 수 없어요 😓</p>`;
-    // searchResultTitle.style.display = "none";
   }
 }
 
@@ -51,9 +51,12 @@ function handleSearchInput() {
 
   if (!keyword) {
     searchResultTitle.style.display = "none";
+    // categoryCardWrapper.style.display = "block";
     return;
   }
   searchResultTitle.style.display = "block";
+  // categoryCardWrapper.style.display = "none";
+
   const matched = getMatchedExercises(keyword);
 
   // 입력 추천 자동 검색어..?
