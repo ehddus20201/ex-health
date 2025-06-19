@@ -607,6 +607,10 @@
  width: 100%;
  padding: 28px 0 60px; 
  background-color: #EFF3FD;
+
+ @media (max-width: 600px) {
+  padding: 12px 0 0 0;
+ }
 }
 
 .sub_tit {
