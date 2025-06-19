@@ -66,7 +66,7 @@ function handleSearchInput() {
   } else {
     autocompleteList.style.display = "none"; // 검색어는 있는데 추천이 없으면 숨김
   }
-  cardWrap.style.display = "block";
+  cardWrap.style.display = "flex";
   searchTitle.style.display = "block";
   showSearchResult(inputValue);
 }

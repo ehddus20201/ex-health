@@ -10,13 +10,15 @@ function toListItems(arr, className) {
     return `<ol class="${className}" style="${style}">${liList}</ol>`
 }
 
-/* 팝업 닫기 이벤트 제어 */
-function handlePopupClose() {    
-    /* 팝업 및 이벤트리스너 제거 */
+
+function handlePopupClose() {
+    // 팝업 및 이벤트리스너 제거 
     const closePopup = () => {
         document.body.removeEventListener('click', clickHandler);
         document.removeEventListener('keydown', escHandler);
         document.querySelector('.popup_backdrop')?.remove();
+        // 스크롤 복구 
+        document.body.style.overflow = "";
     }
 
     /* ESC 누를 시 동작 */
@@ -90,7 +92,7 @@ function createExercisePopup(dataIdx) {
     </div>`
 }
 
-/* 화면에 렌더링 */
+/*화면에 렌더링 */
 export function renderExercisePopup(dataIdx) {
     /* 이미 열려 있는 경우 중복 등록 방지 */
     if (document.querySelector('.popup_card_container')) return;
@@ -98,9 +100,12 @@ export function renderExercisePopup(dataIdx) {
     const popupTemplate = createExercisePopup(dataIdx);
     document.body.insertAdjacentHTML("beforeend", popupTemplate);
 
+    /* 스크롤 막기 */
+    document.body.style.overflow = "hidden";
+
     /* 화면에 렌더링 된 이후에 팝업 닫기 이벤트 등록 */
     requestAnimationFrame(() => {
         document.querySelector(".popup_card_container")?.classList.add("show");
-		handlePopupClose();
-	});
+        handlePopupClose();
+    });
 }
