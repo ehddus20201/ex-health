@@ -1,18 +1,6 @@
 import { exercises } from "./data.js";
 
 
-
-/* 메인 페이지 카드에 등록해야하는 이벤트리스너 */
-
-//card contents html 은 이런 식으로 data-index를 가져야 함
-//{ <div class="card_contents" data-index="3"></div> }
-
-
-
-
-
-
-
 /* data의 요소를 li로 변환 */
 function toListItems(arr, className) {
     const style = (arr.length === 1) ? 
@@ -28,6 +16,7 @@ function handlePopupClose() {
     const closePopup = () => {
         document.body.removeEventListener('click', clickHandler);
         document.removeEventListener('keydown', escHandler);
+        document.querySelector('.popup_backdrop')?.remove();
     }
 
     /* ESC 누를 시 동작 */
@@ -58,6 +47,7 @@ function handlePopupClose() {
 function createExercisePopup(dataIdx) {
     const {name, video, desc, startPos, movement, breathing, cautions} = exercises[dataIdx];
     return /* html */`
+    <div class="popup_backdrop"></div>
     <div class="popup_card_container">
         <header class="popup_header">
             <button class="popup_close-button">
@@ -110,6 +100,7 @@ export function renderExercisePopup(dataIdx) {
 
     /* 화면에 렌더링 된 이후에 팝업 닫기 이벤트 등록 */
     requestAnimationFrame(() => {
+        document.querySelector(".popup_card_container")?.classList.add("show");
 		handlePopupClose();
 	});
 }
