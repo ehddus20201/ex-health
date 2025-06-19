@@ -46,6 +46,8 @@ function handleSearchInput() {
   autocompleteList.innerHTML = "";
 
   if (!inputValue) {
+    searchResultTitle.style.display = "none";
+
     return;
   }
   searchResultTitle.style.display = "block";
