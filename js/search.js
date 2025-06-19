@@ -48,16 +48,22 @@ function handleSearchInput() {
   const matchedExercises = getMatchedExercises(inputValue);
 
   // 입력 추천 자동 검색어..?
-  matchedExercises.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = getHighlightedText(item.name, inputValue);
-    li.addEventListener("click", () => {
-      searchInput.value = item.name;
-      autocompleteList.innerHTML = "";
-      showSearchResult(item.name);
+  if (matchedExercises.length > 0) {
+    autocompleteList.style.display = "block"; //  리스트 보이기
+    matchedExercises.forEach((item) => {
+      const li = document.createElement("li");
+      li.innerHTML = getHighlightedText(item.name, inputValue);
+      li.addEventListener("click", () => {
+        searchInput.value = item.name;
+        autocompleteList.innerHTML = "";
+        autocompleteList.style.display = "none"; // 클릭 후 리스트 숨김
+        showSearchResult(item.name);
+      });
+      autocompleteList.appendChild(li);
     });
-    autocompleteList.appendChild(li);
-  });
+  } else {
+    autocompleteList.style.display = "none"; // 검색어는 있는데 추천이 없으면 숨김
+  }
 
   showSearchResult(inputValue);
 }
@@ -69,3 +75,13 @@ function getHighlightedText(text, keyword) {
 }
 
 searchInput.addEventListener("input", handleSearchInput);
+
+//input 외 영역 클릭 시 리스트 안보이게
+document.addEventListener("click", (e) => {
+  const isClickInsideInput = searchInput.contains(e.target);
+  const isClickInsideList = autocompleteList.contains(e.target);
+
+  if (!isClickInsideInput && !isClickInsideList) {
+    autocompleteList.style.display = "none";
+  }
+});

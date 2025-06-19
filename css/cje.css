@@ -50,6 +50,7 @@
 }
 
 .autocomplete_list {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
