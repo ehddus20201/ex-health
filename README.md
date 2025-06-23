@@ -81,3 +81,20 @@ npm run dev
 | 김아현 | 팀원         |
 | 최정은 | 팀원         |
 
+---
+
+### GitHub 실습 - 충돌 연습
+
+진강박
+정은진
+김아현
+
+### 코드 스타일 가이드
+
+👉🏻 [파일 보기](https://github.com/prgrms-fe-devcourse/NFE5-GIT-TEAM-6B/blob/main/CONTRIBUTING.md)
+테스트 222
+jin1  작업
+작업의 작업
+또작업해
+작업의 작업
+
